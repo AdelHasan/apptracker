@@ -20,7 +20,7 @@ const Register = () => {
   const toggleMember = () => {
     setValues({...values, isMember: !values.isMember})
   }
-
+// test
   const handleChange = (e) => {
     console.log(e.target);
   };
