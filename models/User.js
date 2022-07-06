@@ -20,7 +20,7 @@ const UserSchema = new mongoose.Schema({
     unique: true,
   },
 
-  pasword: {
+  password: {
     type: String,
     required: [true, "Please provide a password"],
     minlength: 6,
@@ -37,7 +37,6 @@ const UserSchema = new mongoose.Schema({
 
   location: {
     type: String,
-    required: [true, "Please provide a name"],
     maxlength: 20,
     trim: true,
   },
