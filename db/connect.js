@@ -1,1 +1,9 @@
-const connectionString = 'mongodb+srv://adel:kai11@seekr.y8k8v.mongodb.net/?retryWrites=true&w=majority'
+import mongoose from 'mongoose'
+
+
+
+const connectDB = (url) => {
+  return mongoose.connect(url)
+}
+
+export default connectDB
