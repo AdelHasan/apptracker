@@ -39,9 +39,13 @@ const UserSchema = new mongoose.Schema({
     type: String,
     maxlength: 20,
     trim: true,
-    location: {type: String, default: 'Seattle, WA'}
+    default: 'Seattle, WA'
   },
   
 });
+
+UserSchema.pre('save', function() {
+  console.log(this.password)
+})
 
 export default mongoose.model('User', UserSchema)
