@@ -3,6 +3,7 @@ const app = express()
 
 import dotenv from 'dotenv'
 dotenv.config()
+import 'express-async-errors'
 
 // db and authenticateUser
 import connectDB from './db/connect.js'
@@ -35,7 +36,7 @@ const start = async () => {
   try {
     await connectDB(process.env.MONGO_URL)
     app.listen(port, () => {
-      console.log(`Live from the ${port} block of PORTland!!!`)
+      console.log(`SERVER RUNNING ON PORT ${port}`)
     })
   } catch (error) {
     console.log(error)
