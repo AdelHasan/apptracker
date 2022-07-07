@@ -1,11 +1,18 @@
 import User from "../models/User.js"
 import { StatusCodes } from "http-status-codes"
 
+class CustomAPIError extends Error {
+  constructor(message) {
+    super(message)
+    this.statusCode = StatusCodes.BAD_REQUEST
+  }
+}
+
 const register = async (req, res, next) => {
     const {name, email, password} = req.body
 
     if (!name || !email || !password) {
-      throw new Error('PLEASE COMPLETE ALL FIELDS')
+      throw new CustomAPIError('PLEASE COMPLETE ALL FIELDS')
     }
 
 
