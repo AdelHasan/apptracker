@@ -8,11 +8,25 @@ class CustomAPIError extends Error {
   }
 }
 
+class BadRequestError extends CustomAPIError {
+  constructor(message) {
+    super(message)
+    this.statusCode = StatusCodes.BAD_REQUEST
+  }
+}
+
+class NotFoundError extends CustomAPIError {
+  constructor(message) {
+    super(message)
+    this.statusCode = StatusCodes.NOT_FOUND
+  }
+}
+
 const register = async (req, res, next) => {
     const {name, email, password} = req.body
 
     if (!name || !email || !password) {
-      throw new CustomAPIError('PLEASE COMPLETE ALL FIELDS')
+      throw new BadRequestError('PLEASE COMPLETE ALL FIELDS')
     }
 
 
