@@ -37,9 +37,9 @@ const Register = () => {
     if (isMember) {
       console.log('already a member')
     } else {
-      registerUser('currentUser')
+      registerUser(currentUser)
     }
-    console.log(values);
+    console.log(currentUser);
   };
 
   return (
