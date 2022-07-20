@@ -5,12 +5,14 @@ import Wrapper from "../assets/wrappers/Navbar";
 import { FaAlignLeft, FaUserCircle, FaCaretDown } from "react-icons/fa";
 
 const Navbar = () => {
+  const { toggleSidebar } = useAppContext()
+  
   return (
     <Wrapper>
       <div className="nav-center">
         <button
           className="toggle-btn"
-          onClick={() => console.log("toggle sidebar")}
+          onClick={toggleSidebar}
         >
           <FaAlignLeft />
         </button>
