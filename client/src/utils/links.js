@@ -26,7 +26,7 @@ const links = [
     id: 4,
     text: 'profile',
     path: 'profile',
-    icon: <IoBarChartSharp />,
+    icon: <ImProfile />,
   },
 ]
 
