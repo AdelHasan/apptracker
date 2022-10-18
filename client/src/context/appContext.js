@@ -15,6 +15,7 @@ import {
   UPDATE_USER_SUCCESS,
   UPDATE_USER_ERROR,
   HANDLE_CHANGE,
+  CLEAR_VALUES
 } from "./actions";
 import axios from "axios";
 
@@ -185,6 +186,10 @@ const AppProvider = ({ children }) => {
     dispatch({ type: HANDLE_CHANGE, payload: { name, value } });
   };
 
+  const clearValues = () => {
+    dispatch({type:CLEAR_VALUES})
+  }
+
   const toggleSidebar = () => {
     dispatch({ type: TOGGLE_SIDEBAR });
   };
@@ -199,7 +204,8 @@ const AppProvider = ({ children }) => {
         toggleSidebar,
         logoutUser,
         updateUser,
-        handleChange
+        handleChange,
+        clearValues
       }}
     >
       {children}
