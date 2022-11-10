@@ -44,6 +44,10 @@ const initialState = {
   jobType: "full-time",
   statusOptions: ["interview", "declined", "pending"],
   status: "pending",
+  jobs: [],
+  totalJobs: 0,
+  numOfPages: 1,
+  page: 1,
 };
 
 const AppContext = React.createContext();
@@ -215,7 +219,7 @@ const AppProvider = ({ children }) => {
       });
     }
 
-    clearAlert()
+    clearAlert();
   };
 
   const toggleSidebar = () => {
@@ -234,7 +238,7 @@ const AppProvider = ({ children }) => {
         updateUser,
         handleChange,
         clearValues,
-        createJob
+        createJob,
       }}
     >
       {children}
